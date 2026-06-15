@@ -36,7 +36,7 @@ p{font-weight:400;font-size:16px;line-height:28px;letter-spacing:0;color:var(--p
 
 .site-header{position:absolute;z-index:20;width:100%}
 .koodo-navbar{padding:18px 0;background:transparent;transition:.25s ease}
-.koodo-navbar.scrolled{background:rgb(221 221 221 / 88%);;backdrop-filter:blur(12px);padding:8px 0}
+.koodo-navbar.scrolled{background:rgb(221 221 221 / 88%);backdrop-filter:blur(12px);padding:8px 0}
 .brand-logo {
   width: 165px;
   height: auto;
@@ -315,7 +315,7 @@ a.navbar-brand::before {
 }
 @media (max-width:991px){
   .page-pad,.narrow-pad{padding-left:24px;padding-right:24px}
-  .koodo-navbar{background:rgba(0,33,86,.88);padding:10px 0}
+  .koodo-navbar{background:rgb(221 221 221 / 88%);padding:10px 0}
   .brand-logo,
   .koodo-navbar.scrolled .brand-logo {width: 105px;}
   a.navbar-brand::before,
