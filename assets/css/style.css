@@ -37,7 +37,16 @@ p{font-weight:400;font-size:16px;line-height:28px;letter-spacing:0;color:var(--p
 .site-header{position:absolute;z-index:20;width:100%}
 .koodo-navbar{padding:18px 0;background:transparent;transition:.25s ease}
 .koodo-navbar.scrolled{background:rgba(0,33,86,.88);backdrop-filter:blur(12px);padding:8px 0}
-.brand-logo{width:128px;height:auto;position: relative;z-index: 2;}
+.brand-logo {
+  width: 165px;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  transition: width 0.25s ease, transform 0.25s ease;
+}
+.koodo-navbar.scrolled .brand-logo {
+  width: 128px;
+}
 
 .navbar-brand {
     position: relative;
@@ -48,18 +57,25 @@ p{font-weight:400;font-size:16px;line-height:28px;letter-spacing:0;color:var(--p
 }
 
 a.navbar-brand::before {
-    content: "";
-    position: absolute;
-    width: 220px;
-    height: 100px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.95);
-    filter: blur(60px);
-    z-index: -1;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 120px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+  transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease;
+}
+
+.koodo-navbar.scrolled a.navbar-brand::before {
+  width: 220px;
+  height: 100px;
+  opacity: 0.8;
 }
 
 .navbar-dark .navbar-nav .nav-link{
@@ -98,9 +114,7 @@ a.navbar-brand::before {
 .circle-btn:hover{background:var(--navy);color:#fff}
 
 .services-section{background:#f8f8f8;padding-top:58px;padding-bottom:82px;overflow:hidden}
-.services-track{display:flex;gap:24px;overflow-x:auto;scroll-behavior:smooth;padding-bottom:4px;scrollbar-width:none}
-.services-track::-webkit-scrollbar{display:none}
-.service-card{flex:0 0 calc((100% - 48px)/3);min-width:300px}
+
 .service-card img{width:100%;height:337px;object-fit:cover;margin-bottom:24px}
 .service-card h3,.philosophy-card h3{margin:0 0 14px;color:var(--heading)}
 .service-card p,.philosophy-card p,.partnership-copy p,.footer-about p{color:var(--para)}
@@ -183,9 +197,73 @@ a.navbar-brand::before {
 .philosophy-section .section-head{margin-bottom:38px}
 .philosophy-section .section-head h2{text-transform:uppercase}
 .philosophy-arrows{margin-top:-50px;margin-bottom:36px}
-.philosophy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+
 .philosophy-card img{width:100%;height:350px;object-fit:cover;margin-bottom:23px}
 .philosophy-card h3{margin-bottom:14px}
+
+
+
+.koodo-splide {
+  position: relative;
+}
+
+.koodo-splide .splide__track {
+  overflow: hidden;
+}
+
+.koodo-splide .splide__list {
+  align-items: stretch;
+}
+
+.koodo-splide .splide__slide {
+  height: auto;
+}
+
+.koodo-splide .service-card,
+.koodo-splide .philosophy-card {
+  height: 100%;
+}
+
+.koodo-splide .splide__pagination {
+  display: none;
+}
+
+.koodo-splide .splide__arrow {
+  position: static;
+  transform: none;
+  opacity: 1;
+}
+
+.koodo-splide .splide__arrow svg {
+  display: none;
+}
+
+.koodo-splide .splide__arrow:disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.services-splide .service-card,
+.philosophy-splide .philosophy-card {
+  min-width: 0;
+}
+
+.service-card img {
+  width: 100%;
+  height: 337px;
+  object-fit: cover;
+  margin-bottom: 24px;
+}
+
+.philosophy-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  margin-bottom: 23px;
+}
+
+
+
 
 .cta-section{background:var(--navy-dark);color:#fff;padding:54px 0 55px}
 .cta-section h2{color:#fff;margin-bottom:16px}
@@ -220,17 +298,21 @@ a.navbar-brand::before {
 
 @media (min-width:1440px){
   .hero-section{height:650px}
-  .brand-logo{width:150px}
+  .brand-logo{width:185px}
+  .koodo-navbar.scrolled .brand-logo {width: 150px;}
   .service-card img{height:395px}
   .partnership-image img{height:420px}
-  .philosophy-card img{height:310px}
+  .philosophy-card img{height:350px}
   .page-pad{padding-left:80px;padding-right:80px}
   .narrow-pad{padding-left:180px;padding-right:180px}
 }
 @media (max-width:991px){
   .page-pad,.narrow-pad{padding-left:24px;padding-right:24px}
   .koodo-navbar{background:rgba(0,33,86,.88);padding:10px 0}
-  .brand-logo{width:105px}
+  .brand-logo,
+  .koodo-navbar.scrolled .brand-logo {width: 105px;}
+  a.navbar-brand::before,
+  .koodo-navbar.scrolled a.navbar-brand::before {width: 180px;height: 80px;}
   .navbar-collapse{padding:18px 0}
   .navbar-nav{gap:13px!important}
   .hero-section{height:620px;min-height:620px;background-position:center}

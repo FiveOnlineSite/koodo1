@@ -19,6 +19,7 @@ $address = 'Mumbai, India';
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -65,42 +66,66 @@ $address = 'Mumbai, India';
           <h2>Comprehensive Financial Solutions</h2>
         </div>
 
-        <div class="slider-toolbar">
-          <button class="circle-btn" type="button" data-scroll="left" aria-label="Previous services"><i
-              class="fa-solid fa-arrow-left"></i></button>
-          <button class="circle-btn" type="button" data-scroll="right" aria-label="Next services"><i
-              class="fa-solid fa-arrow-right"></i></button>
+        <?php
+        $services = [
+          [
+            'title' => 'Portfolio Restructuring',
+            'desc' => 'We assist clients in reviewing and restructuring existing portfolios to better align with evolving
+              financial goals, market conditions, risk appetite, and long-term investment strategies.',
+            'image' => 'assets/images/service-portfolio.webp',
+            'alt' => 'Portfolio Restructuring',
+          ],
+          [
+            'title' => 'Equity Investments',
+            'desc' => 'Participate in India’s long-term growth story through carefully selected equity investment opportunities
+              and market access solutions.',
+            'image' => 'assets/images/service-equity.webp',
+            'alt' => 'Equity Investments',
+          ],
+          [
+            'title' => 'Mutual Funds',
+            'desc' => 'Build diversified portfolios through professionally managed mutual fund strategies aligned with long-term
+              financial objectives and evolving investment needs.',
+            'image' => 'assets/images/service-mutual.webp',
+            'alt' => 'Mutual Funds',
+          ],
+          [
+            'title' => 'Alternative Investments',
+            'desc' => 'Explore curated alternative investment avenues designed to complement traditional portfolios and support
+              broader wealth creation goals.',
+            'image' => 'assets/images/service-alt.webp',
+            'alt' => 'Alternative Investments',
+          ],
+        ];
+        ?>
+
+        <div class="splide koodo-splide services-splide" id="servicesSlider" aria-label="Services Slider">
+
+          <div class="slider-toolbar splide__arrows">
+            <button class="circle-btn splide__arrow splide__arrow--prev" type="button">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button class="circle-btn splide__arrow splide__arrow--next" type="button">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <div class="splide__track">
+            <ul class="splide__list">
+              <?php foreach ($services as $service): ?>
+                <li class="splide__slide">
+                  <div class="service-card">
+                    <img src="<?php echo $service['image']; ?>" alt="<?php echo $service['alt']; ?>">
+                    <h3><?php echo $service['title']; ?></h3>
+                    <p><?php echo $service['desc']; ?></p>
+                  </div>
+                </li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
         </div>
 
-        <div class="services-track" id="servicesTrack">
-          <article class="service-card">
-            <img src="assets/images/service-portfolio.webp" alt="Portfolio Restructuring">
-            <h3>Portfolio Restructuring</h3>
-            <p>We assist clients in reviewing and restructuring existing portfolios to better align with evolving
-              financial goals, market conditions, risk appetite, and long-term investment strategies.</p>
-          </article>
 
-          <article class="service-card">
-            <img src="assets/images/service-equity.webp" alt="Equity Investments">
-            <h3>Equity Investments</h3>
-            <p>Participate in India’s long-term growth story through carefully selected equity investment opportunities
-              and market access solutions.</p>
-          </article>
-
-          <article class="service-card">
-            <img src="assets/images/service-mutual.webp" alt="Mutual Funds">
-            <h3>Mutual Funds</h3>
-            <p>Build diversified portfolios through professionally managed mutual fund strategies aligned with long-term
-              financial objectives and evolving investment needs.</p>
-          </article>
-
-          <article class="service-card">
-            <img src="assets/images/service-alt.webp" alt="Alternative Investments">
-            <h3>Alternative Investments</h3>
-            <p>Explore curated alternative investment avenues designed to complement traditional portfolios and support
-              broader wealth creation goals.</p>
-          </article>
-        </div>
 
         <div class="text-center mt-5">
           <a href="#contact" class="primary-btn btn-with-icon">
@@ -144,36 +169,61 @@ $address = 'Mumbai, India';
           <h2>CREATING OPPORTUNITY. BUILDING VALUE.</h2>
         </div>
 
-        <div class="slider-toolbar philosophy-arrows">
-          <button class="circle-btn" type="button" data-philosophy="left" aria-label="Previous philosophy"><i
-              class="fa-solid fa-arrow-left"></i></button>
-          <button class="circle-btn" type="button" data-philosophy="right" aria-label="Next philosophy"><i
-              class="fa-solid fa-arrow-right"></i></button>
-        </div>
 
-        <div class="philosophy-grid" id="philosophyTrack">
-          <article class="philosophy-card">
-            <img src="assets/images/philosophy-discipline.webp" alt="Discipline">
-            <h3>Discipline</h3>
-            <p>At Koodo India, we believe successful wealth management is built on identifying meaningful opportunities
-              while maintaining a disciplined focus on long-term value creation.</p>
-          </article>
-
-          <article class="philosophy-card">
-            <img src="assets/images/philosophy-guidance.webp" alt="Guidance">
-            <h3>Guidance</h3>
-            <p>Our role extends beyond facilitating investments — we help clients make informed financial decisions that
-              support their aspirations today while building lasting value for future generations.</p>
-          </article>
-
-          <article class="philosophy-card">
-            <img src="assets/images/philosophy-partnership.webp" alt="Partnership">
-            <h3>Partnership</h3>
-            <p>By combining market access, institutional research capabilities, professional guidance, and a
+        <?php
+        $philosophies = [
+          [
+            'title' => 'Discipline',
+            'desc' => 'At Koodo India, we believe successful wealth management is built on identifying meaningful opportunities
+              while maintaining a disciplined focus on long-term value creation.',
+            'image' => 'assets/images/philosophy-discipline.webp',
+            'alt' => 'Discipline',
+          ],
+          [
+            'title' => 'Guidance',
+            'desc' => 'Our role extends beyond facilitating investments — we help clients make informed financial decisions that
+              support their aspirations today while building lasting value for future generations.',
+            'image' => 'assets/images/philosophy-guidance.webp',
+            'alt' => 'Guidance',
+          ],
+          [
+            'title' => 'Partnership',
+            'desc' => 'By combining market access, institutional research capabilities, professional guidance, and a
               relationship-first approach, we strive to serve as a trusted long-term partner in every stage of wealth
-              creation.</p>
-          </article>
+              creation.',
+            'image' => 'assets/images/philosophy-partnership.webp',
+            'alt' => 'Partnership',
+          ],
+        ];
+        ?>
+
+        <div class="splide koodo-splide philosophy-splide" id="philosophySlider" aria-label="Philosophy Slider">
+
+          <div class="slider-toolbar philosophy-arrows splide__arrows">
+            <button class="circle-btn splide__arrow splide__arrow--prev" type="button">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button class="circle-btn splide__arrow splide__arrow--next" type="button">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <div class="splide__track">
+            <ul class="splide__list">
+              <?php foreach ($philosophies as $item): ?>
+                <li class="splide__slide">
+                  <div class="philosophy-card">
+                    <img src="<?php echo $item['image']; ?>" alt="<?php echo $item['alt']; ?>">
+                    <h3><?php echo $item['title']; ?></h3>
+                    <p><?php echo $item['desc']; ?></p>
+                  </div>
+                </li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
         </div>
+
+
       </div>
     </section>
 
@@ -225,6 +275,7 @@ $address = 'Mumbai, India';
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 
