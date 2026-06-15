@@ -8,7 +8,7 @@
   document.querySelectorAll('[data-scroll]').forEach(btn => {
     btn.addEventListener('click', () => {
       const direction = btn.getAttribute('data-scroll') === 'left' ? -1 : 1;
-      services && services.scrollBy({ left: direction * 420, behavior: 'smooth' });
+      services && services.scrollBy({ left: direction * 400, behavior: 'smooth' });
     });
   });
 
