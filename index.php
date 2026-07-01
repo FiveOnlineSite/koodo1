@@ -3,53 +3,14 @@ $siteName = 'Koodo India';
 $phone = '+91 00000 00000';
 $email = 'info@koodoindia.com';
 $address = 'Mumbai, India';
+
+$pageTitle = 'Creating Opportunity. Building Values.';
+$metaDescription = 'Thoughtful financial solutions focused on long-term wealth creation, preservation, and strategic financial guidance.';
+$currentPage = 'home';
+$includeSplide = true;
+
+include __DIR__ . '/includes/header.php';
 ?>
-<!doctype html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><?php echo $siteName; ?> - Creating Opportunity. Building Values.</title>
-  <meta name="description"
-    content="Thoughtful financial solutions focused on long-term wealth creation, preservation, and strategic financial guidance.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-    rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
-
-<body>
-
-  <header class="site-header">
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top koodo-navbar">
-      <div class="container-fluid page-pad">
-        <a class="navbar-brand" href="#home" aria-label="Koodo India">
-          <img src="assets/images/logo.png" alt="Koodo Logo" class="brand-logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
-          aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="mainMenu">
-          <ul class="navbar-nav align-items-lg-center gap-lg-4">
-            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#career">Career</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
 
   <main>
     <section class="hero-section" id="home">
@@ -128,7 +89,7 @@ $address = 'Mumbai, India';
 
 
         <div class="text-center mt-5">
-          <a href="#contact" class="primary-btn btn-with-icon">
+          <a href="about-us.php" class="primary-btn btn-with-icon">
             Know More
             <span class="btn-icon" aria-hidden="true">
               <img src="assets/images/up-right.png" alt="" class="icon-default">
@@ -232,7 +193,7 @@ $address = 'Mumbai, India';
         <h2>Let’s Start a Conversation</h2>
         <p>Connect with Koodo India and discover how a disciplined, long-term approach<br class="d-none d-md-block"> can
           help create opportunities and build lasting value.</p>
-        <a href="mailto:<?php echo $email; ?>" class="secondary-btn btn-with-icon">
+        <a href="contact.php" class="secondary-btn btn-with-icon">
           Contact Us
           <span class="btn-icon" aria-hidden="true">
             <img src="assets/images/up-right-blue.png" alt="" class="icon-default">
@@ -243,40 +204,4 @@ $address = 'Mumbai, India';
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container-fluid page-pad">
-      <div class="footer-top">
-        <div class="footer-about">
-          <img src="assets/images/logo.png" alt="Koodo Logo" class="footer-logo">
-          <p>Thoughtful financial solutions focused on long-term wealth creation, preservation, and strategic financial
-            guidance</p>
-        </div>
-        <div class="footer-links-wrap">
-          <ul class="footer-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#career">Career</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-          </ul>
-          <div class="social-row">
-            <span>Follow Us</span>
-            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div><a href="#">Privacy Policy</a> <a href="#">Terms &amp; Condition</a></div>
-        <p>© 2026 Koodo India Pvt. Ltd. All Rights Reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-  <script src="assets/js/main.js"></script>
-</body>
-
-</html>
+<?php include __DIR__ . '/includes/footer.php'; ?>

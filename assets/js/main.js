@@ -52,4 +52,17 @@
       },
     },
   });
+
+  document.querySelectorAll('form.site-form').forEach((form) => {
+    form.setAttribute('novalidate', '');
+    form.addEventListener('submit', (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+        const firstInvalid = form.querySelector(':invalid');
+        if (firstInvalid) firstInvalid.focus();
+      }
+      form.classList.add('was-validated');
+    });
+  });
 })();
