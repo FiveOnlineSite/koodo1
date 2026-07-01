@@ -334,7 +334,7 @@ body.about-body .navbar-toggler-icon{
   .page-pad,.narrow-pad{padding-left:24px;padding-right:24px}
   .koodo-navbar{padding:10px 0}
   .brand-logo,
-  .koodo-navbar.scrolled .brand-logo {width: 105px;}
+  .koodo-navbar.scrolled .brand-logo {width: 199px;}
   a.navbar-brand::before,
   .koodo-navbar.scrolled a.navbar-brand::before {width: 180px;height: 80px;}
   .offcanvas-lg{
